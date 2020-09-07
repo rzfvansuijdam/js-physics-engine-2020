@@ -8,3 +8,18 @@ canvas.width = width;
 canvas.height = height;
 
 // begin hier met jouw code voor deze opdracht
+
+addEventListener('mousedown', mouseDownHandler)
+function mouseDownHandler(evt){
+	console.log(evt)
+} 
+
+addEventListener('mouseup', mouseUpHandler)
+function mouseUpHandler(evt){
+	console.log(evt)
+} 
+
+addEventListener('mousemove', mouseMoveHandler)
+function mouseMoveHandler(evt){
+	console.log(evt)
+} 
