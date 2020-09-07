@@ -13,7 +13,7 @@ canvas.height = height;
 let img,img1,angle;
 
 img1 = new Image();
-img.src = "images/cog1.png";
+img1.src = "images/cog1.png";
 
 img = new Image();
 img.src = "images/cog.png";
@@ -30,14 +30,9 @@ function animate(){
   context.translate(300,300);
   context.rotate(angle);
   context.drawImage(img,-150,-150,300,300);
+  context.drawImage(img1,-150,-150,250,250);
   context.restore();
   angle += 0.01;
 
-  context.save();
-  context.translate(300,300);
-  context.rotate(angle);
-  context.drawImage(img,-150,-150,250,250);
-  context.restore();
-  angle += 0.01;
 
 }
