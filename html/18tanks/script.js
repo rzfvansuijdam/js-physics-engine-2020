@@ -8,6 +8,7 @@ canvas.width = width;
 canvas.height = height;
 
 // begin hier met jouw code voor deze opdracht
+// declare namespace
 
 let spriteSheet,sw,sh,greenTank;
 
@@ -15,20 +16,20 @@ spriteSheet = new Image();
 spriteSheet.src = "images/tanksheet.png";
 
 greenTank = {};
-greenTank.animationArray = [1,2,3,4,5,6,7,8];
+greenTank.animationArray = [8,7,6,5,4,3,2,1];
 greenTank.index = 0;
 
-greenTank.x = 100;
-greenTank.y = 100;
+greenTank.x = 200;
+greenTank.y = 200;
 
 greenTank.vx = 0;
 greenTank.vy = -10;
 
 
 greenTank.draw = function(){
-  greenTank.sx = greenTank.animationArray[greenTank.index]%8 * 84;
-  greenTank.sy = Math.floor(greenTank.animationArray[greenTank.index]/8) * 84;
-  context.drawImage(spriteSheet,greenTank.sx,greenTank.sy,84,84,greenTank.x,greenTank.y,84,84)
+  greenTank.sx = greenTank.animationArray[greenTank.index]%8 * 50;
+  greenTank.sy = Math.floor(greenTank.animationArray[greenTank.index]/8) * 50;
+  context.drawImage(spriteSheet,greenTank.sx,greenTank.sy,45,50,greenTank.x,greenTank.y,45,50)
 }
 
 greenTank.update = function(){
@@ -39,11 +40,28 @@ greenTank.update = function(){
   }
 }
 
+window.addEventListener('keydown',(e)=>{
+  switch (e.key) {
+    case "ArrowRight":
+      greenTank.vx = 10;
+      greenTank.vy = 0;
+      break;
+      case "ArrowDown":
+        greenTank.vx = 0;
+        greenTank.vy = -10;
+        case "ArrowLeft":
+          greenTank.vx = -10;
+          greenTank.vy = 0;
+    default:
+
+  }(e.key);
+})
+
 
 
 spriteSheet.addEventListener('load',()=>{
-  sw = spriteSheet.width/8;
-  sh = spriteSheet.height/4
+  sw = spriteSheet.width/2;
+  sh = spriteSheet.height/2;
   setInterval(animate,100);
 });
 
