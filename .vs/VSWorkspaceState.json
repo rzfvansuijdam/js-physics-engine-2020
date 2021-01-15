@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\html",
+    "\\html\\18tanks"
   ],
+  "SelectedNode": "\\html\\18tanks\\script.js",
   "PreviewInSolutionExplorer": false
 }
